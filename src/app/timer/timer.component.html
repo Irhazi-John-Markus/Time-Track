@@ -1,7 +1,10 @@
+<!-- filepath: /c:/Users/joirhazi/OneDrive - NTT DATA EMEAL/Desktop/Time-Track/src/app/timer/timer.component.html -->
 <div>
   <h2>Timer</h2>
   <p>{{ getFormattedTime() }}</p>
-
   <button (click)="startTimer()">Start</button>
   <button (click)="stopTimer()">Stop</button>
+  <div class="circular-progress">
+    <div class="circle" [style.strokeDashoffset]="440 - (progress / 100) * 440"></div>
+  </div>
 </div>
