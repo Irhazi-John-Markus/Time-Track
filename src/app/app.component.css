@@ -1,13 +1,71 @@
-:host {
-    display: block;
-    min-height: 100vh;
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-    font-family: Arial, sans-serif;
-    text-align: center;
-    padding: 20px;
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+
+.time-tracker {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 800px;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 2rem;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  margin: 2rem 0;
+}
+
+
+
+.timer-hourglass {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 1;
+}
+
+app-progress-bar {
+  flex-shrink: 0;
+  margin-right: 2rem;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+app-progress-bar:hover {
+  transform: scale(1.05);
+}
+
+
+
+app-hourglass {
+  margin-left: 2rem;
+  width: 300px;
+  transition: transform 0.3s ease;
+}
+
+app-hourglass:hover {
+  transform: scale(1.05);
+}
+
+@media (max-width: 768px) {
+  .time-tracker {
+    flex-direction: column;
+    align-items: center;
+    padding: 1.5rem;
   }
   
-  h1 {
-    color: #333;
-    margin-bottom: 20px;
+  app-progress-bar,
+  app-hourglass {
+    margin: 1rem 0;
+    width: 100%;
+    max-width: 300px;
   }
+}
