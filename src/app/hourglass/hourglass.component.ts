@@ -1,21 +1,18 @@
-import { Component, ElementRef, Input, OnInit, ViewChild } from '@angular/core';
+import { Component, Input, OnChanges, SimpleChanges } from '@angular/core';
 
 @Component({
   selector: 'app-hourglass',
   templateUrl: './hourglass.component.html',
   styleUrls: ['./hourglass.component.css']
 })
-export class HourglassComponent implements OnInit {
-  @Input() duration: number = 60; // duration in seconds
-  @ViewChild('sandTop') sandTopRef!: ElementRef;
-  @ViewChild('sandBottom') sandBottomRef!: ElementRef;
+export class HourglassComponent implements OnChanges {
+  @Input() duration: number = 60; // Duration in seconds (60 seconds)
+  @Input() isRunning: boolean = false; // Controlled by parent component
+  animationDuration: string = '60s'; // Default to 60 seconds
 
-  ngOnInit(): void {
-    setTimeout(() => {
-      if (this.sandTopRef && this.sandBottomRef) {
-        this.sandTopRef.nativeElement.style.animationDuration = `${this.duration}s`;
-        this.sandBottomRef.nativeElement.style.animationDuration = `${this.duration}s`;
-      }
-    });
+  ngOnChanges(changes: SimpleChanges) {
+    if (changes['duration']) {
+      this.animationDuration = `${this.duration}s`;
+    }
   }
 }

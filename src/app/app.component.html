@@ -1,6 +1,9 @@
 <div>
   <h1>{{ title }}</h1>
-  <app-timer></app-timer>
-  <app-hourglass [duration]="60"></app-hourglass>
-<app-progress-bar [duration]="60"></app-progress-bar>
+  <app-timer #timer
+    (timerStarted)="hourglass.isRunning = true"
+    (timerStopped)="hourglass.isRunning = false">
+  </app-timer>
+  <app-hourglass #hourglass [duration]="60"></app-hourglass>
+  <app-progress-bar [progress]="timer.progress"></app-progress-bar>
 </div>

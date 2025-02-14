@@ -1,18 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { CommonModule } from '@angular/common';
 import { AppComponent } from './app.component';
 import { TimerComponent } from './timer/timer.component';
+import { HourglassComponent } from './hourglass/hourglass.component';
+import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
   declarations: [],
   imports: [
     BrowserModule,
-    CommonModule,
-    AppComponent,
-    TimerComponent
-
+    ProgressBarComponent,
+    HourglassComponent,
+    TimerComponent,
+    AppComponent
   ],
-  providers: [],
+  providers: []
 })
 export class AppModule { }
