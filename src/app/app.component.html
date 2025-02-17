@@ -7,7 +7,7 @@
         (timerStarted)="hourglass.isRunning = true"
         (timerStopped)="hourglass.isRunning = false">
       </app-timer>
-      <app-hourglass #hourglass [duration]="60"></app-hourglass>
+      <app-hourglass #hourglass [duration]="60" [isRunning]="timer.isRunning"></app-hourglass>
     </div>
   </div>
 </div>

@@ -1,19 +1,19 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppComponent } from './app.component';
 import { TimerComponent } from './timer/timer.component';
 import { HourglassComponent } from './hourglass/hourglass.component';
 import { ProgressBarComponent } from './progress-bar/progress-bar.component';
 
 @NgModule({
-  declarations: [],
+  declarations: [  ],
   imports: [
     BrowserModule,
-    ProgressBarComponent,
-    HourglassComponent,
-    TimerComponent,
-    AppComponent
+    BrowserAnimationsModule,
+    MatSnackBarModule
   ],
-  providers: []
+  providers: [],
 })
 export class AppModule { }
