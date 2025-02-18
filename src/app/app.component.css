@@ -9,8 +9,7 @@
 }
 
 
-.time-tracker {
-  display: flex;
+.time-tracker {display: flex;
   justify-content: space-between;
   width: 100%;
   max-width: 800px;
