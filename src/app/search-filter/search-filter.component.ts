@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -16,6 +17,7 @@ import { MatButtonModule } from '@angular/material/button';
   standalone: true,
   imports: [
     CommonModule,
+    FormsModule,
     MatFormFieldModule,
     MatInputModule,
     MatDatepickerModule,
@@ -32,7 +34,6 @@ export class SearchFilterComponent {
   search: string = '';
   date: Date | null = null;
   status: string = 'all';
-searchText: any;
 
   applyFilter(search: string) {
     this.search = search;

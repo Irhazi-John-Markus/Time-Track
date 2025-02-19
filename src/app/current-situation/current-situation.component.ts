@@ -10,13 +10,20 @@ import { SearchFilterComponent } from "../search-filter/search-filter.component"
   imports: [CommonModule, SearchFilterComponent]
 })
 export class CurrentSituationComponent {
-  results: any[] = []; 
+  results: any[] = [
+    { name: 'Item 1', date: '2023-01-01', status: 'active' },
+    { name: 'Item 2', date: '2023-01-02', status: 'inactive' },
+    // Add more items as needed
+  ];
+
+  filteredResults: any[] = [...this.results];
 
   applyFilter(filter: { search: string, date: Date, status: string }) {
-    this.results = this.results.filter(item => {
-      return (filter.search ? item.name.includes(filter.search) : true) &&
-             (filter.date ? new Date(item.date).toDateString() === filter.date.toDateString() : true) &&
-             (filter.status !== 'all' ? item.status === filter.status : true);
+    this.filteredResults = this.results.filter(item => {
+      const matchesSearch = item.name.toLowerCase().includes(filter.search.toLowerCase());
+      const matchesDate = new Date(item.date).toDateString() === filter.date.toDateString();
+      const matchesStatus = filter.status === 'all' || item.status === filter.status;
+      return matchesSearch && matchesDate && matchesStatus;
     });
   }
 }

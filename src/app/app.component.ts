@@ -30,7 +30,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatSelectModule,
     MatOptionModule,
     MatIconModule,
-    MatButtonModule
+    MatButtonModule,
+    CurrentSituationComponent
 ],
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
