@@ -6,8 +6,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatInputModule } from '@angular/material/input';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
-import { MatNativeDateModule } from '@angular/material/core';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
 import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatIconModule } from '@angular/material/icon';
 import { AppComponent } from './app.component';
 import { TimerComponent } from './timer/timer.component';
 import { HourglassComponent } from './hourglass/hourglass.component';
@@ -28,14 +30,35 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     MatDatepickerModule,
     MatNativeDateModule,
     MatButtonModule,
+    MatFormFieldModule,
+    MatOptionModule,
+    MatIconModule,
+    ProgressBarComponent,
+    CurrentSituationComponent,
     AppComponent,
     TimerComponent,
-    HourglassComponent,
-    ProgressBarComponent,
-    SummaryComponent,
-    CurrentSituationComponent,
-    SearchFilterComponent
+    HourglassComponent
   ],
   providers: [],
 })
-export class AppModule { }
+export class AppModule { 
+  applyFilter(value: string | null) {
+    if (value !== null) {
+      // your code here
+    }
+  }
+
+  applyDateFilter(event: { value: any }) {
+    const value = event.value;
+    if (value) {
+      // your code here
+    }
+  }
+
+  applyStatusFilter(event: { value: any }) {
+    const value = event.value;
+    if (value) {
+      // your code here
+    }
+  }
+}

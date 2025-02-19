@@ -1,0 +1,9 @@
+.search-filter {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.results {
+  margin-top: 1rem;
+}
