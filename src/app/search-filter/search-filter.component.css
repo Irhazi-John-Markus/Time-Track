@@ -2,8 +2,10 @@
   display: flex;
   gap: 1rem;
   margin-bottom: 1rem;
+  align-items: center;
 }
 
-.results {
-  margin-top: 1rem;
+.mat-form-field {
+  width: 100%;
+  max-width: 300px;
 }

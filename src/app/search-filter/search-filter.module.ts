@@ -6,6 +6,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { FormsModule } from '@angular/forms';
 
   @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { MatOptionModule } from '@angular/material/core';
       MatDatepickerModule,
       MatSelectModule,
       MatOptionModule,
-      SearchFilterComponent
+      SearchFilterComponent,
+      FormsModule
     ]
     })
   export class SearchFilterModule { }

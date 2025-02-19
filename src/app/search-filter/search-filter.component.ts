@@ -1,6 +1,5 @@
 import { Component, EventEmitter, Output } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatDatepickerModule } from '@angular/material/datepicker';
@@ -9,26 +8,23 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { MatFormField } from '@angular/material/form-field';
-import { MatLabel } from '@angular/material/form-field';
-import { MatDatepicker } from '@angular/material/datepicker';
+
 @Component({
-  imports: [MatFormField,
-    MatLabel, 
-    MatDatepicker,
-    MatOptionModule,
-    MatDatepickerModule,
-    MatInputModule,
-    MatSelectModule,
-    MatIconModule,
-    MatButtonModule,
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatNativeDateModule
-  ],
   selector: 'app-search-filter',
   templateUrl: './search-filter.component.html',
-  styleUrls: ['./search-filter.component.css']
+  styleUrls: ['./search-filter.component.css'],
+  standalone: true,
+  imports: [
+    CommonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatOptionModule,
+    MatIconModule,
+    MatButtonModule
+  ]
 })
 export class SearchFilterComponent {
   @Output() filterChange = new EventEmitter<{ search: string, date: Date, status: string }>();
@@ -36,19 +32,20 @@ export class SearchFilterComponent {
   search: string = '';
   date: Date | null = null;
   status: string = 'all';
+searchText: any;
 
   applyFilter(search: string) {
     this.search = search;
     this.emitFilterChange();
   }
 
-  applyDateFilter(date: Date) {
-    this.date = date;
+  applyDateFilter(event: any) {
+    this.date = event.value;
     this.emitFilterChange();
   }
 
-  applyStatusFilter(status: string) {
-    this.status = status;
+  applyStatusFilter(event: any) {
+    this.status = event.value;
     this.emitFilterChange();
   }
 

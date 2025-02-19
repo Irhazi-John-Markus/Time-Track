@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatTabsModule } from '@angular/material/tabs';
@@ -22,6 +23,7 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
   declarations: [],
   imports: [
     BrowserModule,
+    FormsModule,
     BrowserAnimationsModule,
     MatSnackBarModule,
     MatTabsModule,
@@ -37,7 +39,9 @@ import { SearchFilterComponent } from './search-filter/search-filter.component';
     CurrentSituationComponent,
     AppComponent,
     TimerComponent,
-    HourglassComponent
+    HourglassComponent,
+    SummaryComponent,
+    SearchFilterComponent
   ],
   providers: [],
 })
